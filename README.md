@@ -9,19 +9,22 @@ This project involves processing and analyzing Divvy bike-sharing data from Chic
 
 This project integrates several tools and processes to manage the workflow:
 
-- ***Tools***
+- ***Tools***:
+  
 - **DBT**: Data transformation and analysis.
 - **Airflow**: Task scheduling and orchestration.
 - **Spark**: Data processing.
 - **Docker**: Containerization.
 - **Terraform**: Infrastructure management.
 - **GCS**: Cloud computing.
-- 
-- ***Steps***
+- **spark**: Analytics engine
+  
+- ***Steps***:
+  
 - **Step 1**:  Using spark.
 - **Step 2**:  Using dbt and gcs.
 - **Step 3**:  Using docker, terraform, airflow .
-- 
+  
 
 ## Project Structure
 
