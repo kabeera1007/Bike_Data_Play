@@ -4,7 +4,7 @@
 
 This project involves processing and analyzing Divvy bike-sharing data from Chicago (2020–2024). It uses a combination of tools like DBT, Airflow, Spark, Docker, and Terraform to handle data transformation, scheduling, and infrastructure management.
 
-![Workflow](https://github.com/kabeera1007/Bike_data_play/blob/master/workflow-001.png)
+![Workflow](https://github.com/kabeera1007/Bike_data_play/blob/master/workflow001.png)
 
 ## Workflow
 
