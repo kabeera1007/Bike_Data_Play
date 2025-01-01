@@ -9,7 +9,7 @@ This project involves processing and analyzing Divvy bike-sharing data from Chic
 
 This project integrates several tools and processes to manage the workflow:
 
-- ***Tools***:
+***Tools***:
   
 - **DBT**: Data transformation and analysis.
 - **Airflow**: Task scheduling and orchestration.
@@ -19,7 +19,7 @@ This project integrates several tools and processes to manage the workflow:
 - **GCS**: Cloud computing.
 - **spark**: Analytics engine
   
-- ***Steps***:
+  ***Steps***:
   
 - **Step 1**:  Using spark.
 - **Step 2**:  Using dbt and gcs.
