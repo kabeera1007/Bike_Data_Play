@@ -17,7 +17,7 @@ This project integrates several tools and processes to manage the workflow:
 - **Docker**: Containerization.
 - **Terraform**: Infrastructure management.
 - **GCS**: Cloud computing.
-- **spark**: Analytics engine
+- **Spark**: Analytics engine
   
   ***Steps***:
   
