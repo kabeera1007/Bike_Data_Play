@@ -2,23 +2,26 @@
 
 ## Description
 
-This project involves processing and analyzing Divvy bike-sharing data from Chicago (2020–2024). It uses a combination of tools like DBT, Airflow, Spark, Docker, and Terraform to handle data transformation, scheduling, and infrastructure management.
-
+This project involves processing and analyzing Divvy bike-sharing data from Chicago (2020–2024) using various tools and technique.
 ![Workflow](https://github.com/kabeera1007/Bike_data_play/blob/master/workflow001.png)
 
 ## Workflow
 
 This project integrates several tools and processes to manage the workflow:
 
+- ***Tools***
 - **DBT**: Data transformation and analysis.
 - **Airflow**: Task scheduling and orchestration.
 - **Spark**: Data processing.
 - **Docker**: Containerization.
 - **Terraform**: Infrastructure management.
-
-## Project Structure
-
-Here is the structure of the project:
+- **GCS**: Cloud computing.
+- 
+- ***Steps***
+- **Step 1**:  Using spark.
+- **Step 2**:  Using dbt and gcs.
+- **Step 3**:  Using docker, terraform, airflow .
+- 
 
 ## Project Structure
 
@@ -41,7 +44,11 @@ The project structure is organized as follows:
 
 ## Data
 
-The dataset contains Divvy bike-sharing trip data from 2020 to 2024. The columns include:
+The dataset contains Divvy bike-sharing trip data from 2020 to 2024.
+
+- **Rows**: 20 million +
+
+The columns include:
 
 - **ride_id**: Unique ID assigned to each Divvy trip.
 - **rideable_type**: Type of vehicle used (bike or scooter).
@@ -57,9 +64,10 @@ The dataset contains Divvy bike-sharing trip data from 2020 to 2024. The columns
 - **end_lng**: Longitude of the end station.
 - **member_casual**: Whether the rider is a Divvy member or a casual user.
 
-[Link to Dataset](URL-to-dataset)
+[Link to Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
 ## Installation
+The complete project is hosted on gcloud. 
 
 ### Prerequisites
 
