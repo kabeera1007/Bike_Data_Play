@@ -1,0 +1,89 @@
+SELECT count(*) FROM `project-001-445912.cleand_by_script.divvy_cleaned` 
+
+SELECT column_name
+FROM `project-001-445912.cleand_by_script.INFORMATION_SCHEMA.COLUMNS`
+WHERE table_name = 'divvy_cleaned';
+
+SELECT
+  COUNTIF(start_lat IS NULL) AS missing_values_start_lat,
+  COUNTIF(start_lng IS NULL) AS missing_values_start_lng,
+  COUNTIF(member_casual IS NULL) AS missing_values_member_casual,
+  COUNTIF(end_lat_imputed IS NULL) AS missing_values_end_lat_imputed,
+  COUNTIF(end_lng_imputed IS NULL) AS missing_values_end_lng_imputed,
+  COUNTIF(ride_duration IS NULL) AS missing_values_ride_duration,
+  COUNTIF(time_of_day IS NULL) AS missing_values_time_of_day,
+  COUNTIF(day_of_week IS NULL) AS missing_values_day_of_week
+FROM
+  `project-001-445912.cleand_by_script.divvy_cleaned`;
+
+
+SELECT *
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+LIMIT 3;
+
+
+CREATE OR REPLACE TABLE `project-001-445912.cleand_by_script.divvy_cleaned` AS
+SELECT DISTINCT *
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`;
+
+SELECT member_casual, COUNT(*) AS ride_count
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+GROUP BY member_casual
+ORDER BY ride_count DESC;
+
+
+SELECT
+  MAX(ride_duration) AS longest_ride_duration,
+  MIN(ride_duration) AS shortest_ride_duration
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`;
+
+
+
+SELECT day_of_week, AVG(ride_duration) AS avg_ride_duration
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+GROUP BY day_of_week
+ORDER BY avg_ride_duration DESC;
+
+SELECT start_station_name, COUNT(*) AS ride_count
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+GROUP BY start_station_name
+ORDER BY ride_count DESC
+LIMIT 5;
+
+
+SELECT rideable_type, COUNT(*) AS ride_count
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+GROUP BY rideable_type
+ORDER BY ride_count DESC;
+
+SELECT start_station_name, SUM(ride_duration) AS total_ride_duration
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+GROUP BY start_station_name
+ORDER BY total_ride_duration DESC
+LIMIT 5;
+
+
+SELECT COUNT(*) AS negative_ride_duration_count
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+WHERE ride_duration < 0;
+
+CREATE OR REPLACE TABLE `project-001-445912.cleand_by_script.divvy_cleaned` AS
+SELECT *
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+WHERE ride_duration >= 0;
+
+SELECT
+  EXTRACT(YEAR FROM started_at) AS year,
+  EXTRACT(MONTH FROM started_at) AS month,
+  COUNT(*) AS num_rides
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+GROUP BY year, month
+ORDER BY num_rides DESC;
+
+SELECT
+  rideable_type,
+  member_casual,
+  COUNT(*) AS num_rides
+FROM `project-001-445912.cleand_by_script.divvy_cleaned`
+GROUP BY rideable_type, member_casual
+ORDER BY num_rides DESC;
