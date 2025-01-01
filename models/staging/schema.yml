@@ -1,0 +1,99 @@
+version: 2
+
+sources:
+    - name: staging
+      database: project-001-445912
+      schema: divvy_trips_data
+
+      tables:
+        - name: external_divvy_data
+        - name: divvy_data_partitioned 
+
+
+models:
+    - name: stg_divvy_trips
+      description: >
+        Divvy ride trips from 4/1/2020 through the previous month. Any records with a blank start_station_name
+        or end_station_name have been removed. This model also excludes the columns for start_station_id and 
+        end_station_id.
+      columns:
+          - name: ride_id
+            description: Unique identifier for each Divvy Bike Rental
+            tests:
+                - not_null:
+                    severity: warn
+          - name: rideable_type 
+            description: > 
+                A code indicating if the rider is a member or paid with credit card
+                member = Divvy Member
+                casual = Paid with Credit Card
+          - name: started_at 
+            description: The date and time when the bike was rented.
+          - name: ended_at 
+            description: The date and time when bike was returned to a docking station.
+          - name: start_station_name
+            description: Name of the docking station the bike was rented from.
+          - name: end_station_name
+            description: Name of the docking station the bike was returned to.
+          - name: start_lat
+            description: Latitude coordinate of bike when rented
+          - name: start_lng
+            description: Longitude coordinate of bike when rented
+          - name: end_lat
+            description: Latitude coordinate of bike when returned
+          - name: end_lng
+            description: Longitude coordinate of bike when returned
+          - name: start_day
+            description: Day of the week the trip was started on
+          - name: end_day
+            description: Day of the week the trip ended on
+
+    - name: stg_stations
+      description: > 
+        Table containing unique station names.
+      columns:
+          - name: station_name
+            description: Name of the Divvy Bike Station.
+            tests:
+              - unique:
+                  severity: warn
+
+    - name: stg_long_rides
+      description: >
+        Table contianing trips where the ended_at datetime is greater than 18 hours from
+        the started_at datetime.
+      columns:
+        - name: ride_id
+          description: Unique identifier for each Divvy Bike Rental
+          tests:
+              - not_null:
+                  severity: warn
+        - name: rideable_type
+          description: test
+        - name: member_casual 
+          description:  
+              A code indicating if the rider is a member or paid with credit card
+              member = Divvy Member
+              casual = Paid with Credit Card
+        - name: started_at 
+          description: The date and time when the bike was rented.
+        - name: ended_at 
+          description: The date and time when bike was returned to a docking station.
+        - name: start_station_name
+          description: Name of the docking station the bike was rented from.
+        - name: end_station_name
+          description: Name of the docking station the bike was returned to.
+        - name: start_lat
+          description: Latitude coordinate of bike when rented
+        - name: start_lng
+          description: Longitude coordinate of bike when rented
+        - name: end_lat
+          description: Latitude coordinate of bike when returned
+        - name: end_lng
+          description: Longitude coordinate of bike when returned
+        - name: start_day
+          description: Day of the week the trip was started on
+        - name: end_day
+          description: Day of the week the trip ended on
+
+
