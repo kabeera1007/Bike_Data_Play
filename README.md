@@ -69,7 +69,9 @@ The columns include:
 [Link to Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
 ## Installation
-The complete project is hosted on gcloud. 
+The complete project is hosted on google cloud. 
+
+## Visualization : https://lookerstudio.google.com/reporting/ccd00616-ec8b-443f-b6e3-c6e6446bfc8c
 
 ### Prerequisites
 
@@ -80,4 +82,4 @@ To run this project, ensure the following tools are installed:
 3. **DBT** (for data transformation)
 4. **Terraform** (for infrastructure management)
 5. **Airflow** (for task scheduling)
-
+6. **Spark** (analytics engine)
