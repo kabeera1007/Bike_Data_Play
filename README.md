@@ -71,7 +71,9 @@ The columns include:
 ## Installation
 The complete project is hosted on google cloud. 
 
-## Visualization : [Link to Visualization](https://lookerstudio.google.com/reporting/ccd00616-ec8b-443f-b6e3-c6e6446bfc8c) 
+## Visualization : 
+
+[Link to Visualization](https://lookerstudio.google.com/reporting/ccd00616-ec8b-443f-b6e3-c6e6446bfc8c) 
 
 ### Prerequisites
 
