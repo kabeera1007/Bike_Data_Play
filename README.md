@@ -20,9 +20,9 @@ This project integrates several tools and processes to manage the workflow:
   
   ***Steps***:
   
-- **Step 1**:  Using spark.
-- **Step 2**:  Using dbt and gcs.
-- **Step 3**:  Using docker, terraform, airflow .
+- **Step 1**:  ETL and ELT Using spark.
+- **Step 2**:  ELT Using dbt and gcs.
+- **Step 3**:  ELT Using docker, terraform, airflow .
   
 
 ## Project Structure
